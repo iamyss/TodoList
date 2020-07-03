@@ -72,12 +72,12 @@ export default class TodoList extends React.Component {
           {this.state.todos.filter((todo) => !todo.complete).length}
         </div>
         <div>
-          <button onClick={() => this.updateTodoToShow("all")}>all</button>
+          <button onClick={() => this.updateTodoToShow("all")}>All</button>
           <button onClick={() => this.updateTodoToShow("active")}>
-            active
+            Active
           </button>
           <button onClick={() => this.updateTodoToShow("complete")}>
-            complete
+            Complete
           </button>
           {this.state.todos.some((todo) => todo.complete) ? (
             <div>
