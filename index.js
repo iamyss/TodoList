@@ -31,6 +31,8 @@ app.use("/todolist", express.static("build"));
 
 app.use("/signup", express.static("build"));
 
+app.use("/signin", express.static("build"));
+
 app.use("/api/user", require("./api/user"));
 
 app.use(async (req, res, next) => {
