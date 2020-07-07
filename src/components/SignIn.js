@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
+//Alert
 import { Alert, AlertTitle } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +41,7 @@ export default function SignIn() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  //Alert States
   const [alertMessage, setAlertMessage] = useState("");
 
   const login = () => {
@@ -61,6 +63,7 @@ export default function SignIn() {
       })
       .catch((err) => {
         console.log(err.response.data);
+        //Invoking alert
         setAlertMessage(err.response.data.message);
       });
   };
@@ -123,6 +126,7 @@ export default function SignIn() {
             container
             style={{ display: !!alertMessage ? "block" : "none" }}
           >
+            {/* Alert placement */}
             <Grid item>
               <Alert severity="error">
                 <AlertTitle>Error</AlertTitle>
